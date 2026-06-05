@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-import { FiPlus, FiClock } from "react-icons/fi";
+import { FiPlus, FiClock, FiX } from "react-icons/fi";
 
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 export default function Sidebar() {
   const user = useSelector((state) => state.auth.user);
@@ -10,8 +11,17 @@ export default function Sidebar() {
   const isAdmin =
     user?.isAdmin || (user?.role && String(user.role).toLowerCase() === "admin");
 
-  return (
-    <div className="w-[300px] bg-card border-r border-gray-800 p-6 flex flex-col ring-1 ring-primary/6">
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setOpen((v) => !v);
+    const openHandler = () => setOpen(true);
+    window.addEventListener("toggleSidebar", openHandler);
+    return () => window.removeEventListener("toggleSidebar", openHandler);
+  }, []);
+
+  const content = (
+    <div className="p-6 flex flex-col h-full">
       <h1 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
         SQL AI
       </h1>
@@ -40,5 +50,30 @@ export default function Sidebar() {
         )}
       </nav>
     </div>
+  );
+
+  return (
+    <>
+      <div className="hidden md:flex w-full md:w-[300px] bg-card md:border-r p-6 flex-col ring-1 ring-primary/6">
+        {content}
+      </div>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
+
+          <div className="absolute left-0 top-0 bottom-0 w-72 bg-card shadow-lg">
+            <div className="flex items-center justify-between p-4 border-b border-gray-800">
+              <div className="text-lg font-semibold">Menu</div>
+              <button onClick={() => setOpen(false)} className="p-2 rounded-md">
+                <FiX />
+              </button>
+            </div>
+            {content}
+          </div>
+        </div>
+      )}
+    </>
   );
 }

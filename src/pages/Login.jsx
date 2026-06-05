@@ -114,7 +114,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <div className="w-[430px] bg-card rounded-3xl p-10 shadow-2xl ring-1 ring-primary/10">
+      <div className="w-full max-w-md bg-card rounded-3xl p-10 shadow-2xl ring-1 ring-primary/10 mx-4">
         <h1 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">SQL AI</h1>
 
         <form onSubmit={submit}>

@@ -135,7 +135,7 @@ export default function Message({ question, answer }) {
   return (
     <div className="mb-8">
       <div className="flex justify-end">
-        <div className="rounded-3xl px-6 py-4 max-w-[60%] bg-primary text-white shadow-lg shadow-primary/20">
+        <div className="rounded-3xl px-6 py-4 max-w-full sm:max-w-[60%] bg-primary text-white shadow-lg shadow-primary/20">
           {question}
         </div>
       </div>

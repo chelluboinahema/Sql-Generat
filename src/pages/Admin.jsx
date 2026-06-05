@@ -44,11 +44,11 @@ export default function Admin() {
   );
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
 
-      <div className="flex-1 p-10">
-        <div className="flex justify-between">
+      <div className="flex-1 p-6 md:p-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <h1 className="text-4xl">Admin Dashboard</h1>
 
           <div className="flex gap-3">
@@ -61,7 +61,7 @@ export default function Admin() {
 
         <input
           placeholder="Search user"
-          className="mt-8 mb-8 w-full p-5 rounded-xl text-black"
+          className="mt-8 mb-8 w-full p-5 rounded-xl text-black bg-slate-900"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

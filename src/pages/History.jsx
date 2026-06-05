@@ -93,10 +93,10 @@ export default function History() {
   }, [history, search]);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
 
-      <div className="flex-1 p-10">
+      <div className="flex-1 p-6 md:p-10">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-4xl font-bold">My History</h1>

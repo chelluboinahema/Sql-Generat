@@ -139,10 +139,10 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex min-h-screen bg-dark">
+    <div className="flex flex-col md:flex-row min-h-screen bg-dark">
       <Sidebar />
 
-      <div className="flex-1 p-10">
+      <div className="flex-1 p-6 md:p-10">
         <Topbar />
 
         <div className="pb-32">

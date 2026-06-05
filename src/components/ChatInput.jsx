@@ -18,8 +18,8 @@ export default function ChatInput({ input, setInput, send, explain, optimize }) 
   };
 
   return (
-    <div className="fixed bottom-10 w-[60%]">
-      <div className="bg-card rounded-full p-3 flex items-center gap-3">
+    <div className="fixed bottom-5 left-1/2 z-30 -translate-x-1/2 w-[90%] sm:w-[85%] md:w-[70%] lg:w-[55%]">
+      <div className="bg-card rounded-full p-3 flex flex-col sm:flex-row items-center gap-3">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}

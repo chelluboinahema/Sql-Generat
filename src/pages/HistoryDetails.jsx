@@ -32,10 +32,10 @@ export default function HistoryDetails() {
   if (!history) return null;
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
 
-      <div className="flex-1 p-10">
+      <div className="flex-1 p-6 md:p-10">
         <h1 className="text-4xl mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan">Query Details</h1>
 
         <div className="bg-card rounded-3xl p-8 ring-1 ring-accent/10">

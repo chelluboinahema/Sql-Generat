@@ -133,7 +133,7 @@ export default function Register() {
 
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <div className="w-[430px] bg-card p-10 rounded-3xl ring-1 ring-primary/10">
+      <div className="w-full max-w-md bg-card p-10 rounded-3xl ring-1 ring-primary/10 mx-4">
         <h1 className="text-4xl mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Register</h1>
 
         <form onSubmit={submit}>
